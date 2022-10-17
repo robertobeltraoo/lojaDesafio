@@ -1,0 +1,45 @@
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 152px;
+}
+
+.logo-pesquisa {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.logo-titulo {
+  display: flex;
+  align-items: center;
+}
+
+.primeiro-titulo{
+  color: #2A7AE4;
+}
+
+.barra-de-pesquisa {
+  background: #f5f5f5;
+  border: #f5f5f5;;
+  border-radius: 20px;
+  width: 393px;
+  height: 40px;
+  margin-left: 15px;
+}
+
+.bt-login {
+  background: #FFFFFF;
+  border-width: 1px;
+  width: 150px;
+  height: 50px;
+  border-color: blue;
+  color: blue;
+  border-radius: 20px;
+}
+
+.bt-login:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
