@@ -38,6 +38,10 @@
   cursor: pointer;
 }
 
+.container-produtos {
+  background-color: #F5F5F5;
+}
+
 .titulo-categoria {
   font-size: 2rem;
 }
@@ -52,7 +56,8 @@
 .lista-produtos {
   display: flex;
   justify-content: space-evenly;
-  margin-bottom: 4rem;
+  margin: 0px;
+  padding-bottom: 2.5rem;
 }
 
 .produto {

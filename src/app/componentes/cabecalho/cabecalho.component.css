@@ -31,11 +31,13 @@
 
 .barra-de-pesquisa {
   background: #f5f5f5;
-  border: #f5f5f5;;
+  border: #f5f5f5;
+  border-width: 0px;
   border-radius: 20px;
   width: 393px;
   height: 40px;
   margin-left: 15px;
+  outline: none;
   position: absolute;
 }
 

@@ -64,17 +64,17 @@
     font-size: 2rem;
   }
   
-  .cabecalho-categoria{
+.cabecalho-categoria{
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin: 0 4.5%;
-  }
+}
   
   .lista-produtos {
     display: flex;
     justify-content: space-evenly;
-    margin-bottom: 4rem;
+    padding-bottom: 2.5rem;
     gap: 1rem;
   }
   
