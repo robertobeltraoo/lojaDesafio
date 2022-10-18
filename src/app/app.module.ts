@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -7,7 +8,8 @@ import { CabecalhoComponent } from './componentes/cabecalho/cabecalho.component'
 import { ProdutosComponent } from './componentes/produtos/produtos.component';
 import { RodapeComponent } from './componentes/rodape/rodape.component';
 import { LoginComponent } from './componentes/login/login.component';
-import { ProdutosHomeComponent } from './componentes/produtos-home/produtos-home.component';
+import { TodosOsProdutosComponent } from './componentes/produtos/todos-os-produtos/todos-os-produtos.component';
+import { PaginaProdutoComponent } from './componentes/produtos/pagina-produto/pagina-produto.component';
 
 @NgModule({
   declarations: [
@@ -16,11 +18,13 @@ import { ProdutosHomeComponent } from './componentes/produtos-home/produtos-home
     ProdutosComponent,
     RodapeComponent,
     LoginComponent,
-    ProdutosHomeComponent
+    TodosOsProdutosComponent,
+    PaginaProdutoComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]

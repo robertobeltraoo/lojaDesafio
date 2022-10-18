@@ -57,6 +57,7 @@
 
 .produto {
   list-style-type: none;
+  cursor: pointer;
 }
 
 .imagem-produto {
@@ -81,6 +82,7 @@
 }
 
 .link-produto{
+  color: #2A7AE4;
   font-family: 'Raleway';
   font-style: normal;
   font-weight: 700;
@@ -91,4 +93,32 @@
 
 .link-produto:hover {
   text-decoration: underline;
+}
+
+.link-ver-tudo{
+  color: #2A7AE4;;
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-decoration: none;
+}
+
+.link-ver-tudo:hover {
+  text-decoration: underline;
+  
+}
+
+.ver-tudo{
+  display: flex;
+  align-items: center;
+}
+
+.ver-tudo:hover{
+  cursor: pointer;
+}
+
+.seta-ver-tudo {
+  margin-left: 10px;
 }

@@ -1,6 +1,6 @@
 <nav class="nav">
   <div class="logo-pesquisa">
-    <div class="logo-titulo">
+    <div class="logo-titulo" (click)="voltarPaginaPrincipal()">
       <img src="../assets/Vector.png" alt="Controle logo da loja">
       <h1 class="primeiro-titulo">Geek</h1>
       <h1 class="segundo-titulo">Store</h1>
@@ -8,9 +8,11 @@
 
     <div class="pesquisa">
       <input
+      type="search"
       class="barra-de-pesquisa"
       placeholder="O que deseja encontrar?"
       >
+      <img class="icone-lupa" src="./../../../assets/lupa.png" alt="Lupa azul">
     </div>
   </div>
   <div class="botao-login">

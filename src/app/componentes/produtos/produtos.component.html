@@ -1,3 +1,7 @@
+<!-- criar um objeto para cada produto e quando clicar cada no 
+  ver produto puxar o produto pelo id do objeto
+-->
+
 <header class="container-banner">
   <div class="texto-banner">
     <h2 class="titulo-banner">Outubro das Crianças</h2>
@@ -10,49 +14,52 @@
   <div class="categorias">
     <div class="cabecalho-categoria">
       <h3 class="titulo-categoria">Star Wars</h3>
-      <a href="#" class="link-ver-tudo">Ver tudo</a>
+      <div class="ver-tudo" (click)="verTudo()">
+        <a class="link-ver-tudo">Ver tudo</a>
+        <img class="seta-ver-tudo" src="./../../../assets/seta.png" alt="Seta azul">
+      </div>
     </div>
     <ul class="lista-produtos">
-      <li class="produto">
-        <img class="imagem-produto" src="./../../../assets/yoda.jpg" alt="Boneco Yoda">
-        <p class="nome-produto">{{ produto.nomeProduto }}</p>
-        <p class="preco-produto">R${{ produto.precoProduto }}</p>
-        <a href="#" class="link-produto">Ver produto</a>
+      <li class="produto" (click)="irParaProduto()">
+        <img class="imagem-produto" [src]="produto[0].imagemProduto" [alt]="produto[0].descricaoProduto">
+        <p class="nome-produto">{{ produto[0].nomeProduto }}</p>
+        <p class="preco-produto">R${{ produto[0].precoProduto }}</p>
+        <a class="link-produto">Ver produto</a>
       </li>
 
-      <li class="produto">
-        <img class="imagem-produto" src="./../../../assets/yoda.jpg" alt="Boneco Yoda">
-        <p class="nome-produto">{{ produto.nomeProduto }}</p>
-        <p class="preco-produto">R${{ produto.precoProduto }}</p>
-        <a href="#" class="link-produto">Ver produto</a>
+      <li class="produto" (click)="irParaProduto()">
+        <img class="imagem-produto" [src]="produto[0].imagemProduto" [alt]="produto[0].descricaoProduto">
+        <p class="nome-produto">{{ produto[0].nomeProduto }}</p>
+        <p class="preco-produto">R${{ produto[0].precoProduto }}</p>
+        <a class="link-produto">Ver produto</a>
       </li>
 
-      <li class="produto">
-        <img class="imagem-produto" src="./../../../assets/yoda.jpg" alt="Boneco Yoda">
-        <p class="nome-produto">{{ produto.nomeProduto }}</p>
-        <p class="preco-produto">R${{ produto.precoProduto }}</p>
-        <a href="#" class="link-produto">Ver produto</a>
+      <li class="produto" (click)="irParaProduto()">
+        <img class="imagem-produto" [src]="produto[0].imagemProduto" [alt]="produto[0].descricaoProduto">
+        <p class="nome-produto">{{ produto[0].nomeProduto }}</p>
+        <p class="preco-produto">R${{ produto[0].precoProduto }}</p>
+        <a class="link-produto">Ver produto</a>
       </li>
 
-      <li class="produto">
-        <img class="imagem-produto" src="./../../../assets/yoda.jpg" alt="Boneco Yoda">
-        <p class="nome-produto">{{ produto.nomeProduto }}</p>
-        <p class="preco-produto">R${{ produto.precoProduto }}</p>
-        <a href="#" class="link-produto">Ver produto</a>
+      <li class="produto" (click)="irParaProduto()">
+        <img class="imagem-produto" [src]="produto[0].imagemProduto" [alt]="produto[0].descricaoProduto">
+        <p class="nome-produto">{{ produto[0].nomeProduto }}</p>
+        <p class="preco-produto">R${{ produto[0].precoProduto }}</p>
+        <a class="link-produto">Ver produto</a>
       </li>
 
-      <li class="produto">
-        <img class="imagem-produto" src="./../../../assets/yoda.jpg" alt="Boneco Yoda">
-        <p class="nome-produto">{{ produto.nomeProduto }}</p>
-        <p class="preco-produto">R${{ produto.precoProduto }}</p>
-        <a href="#" class="link-produto">Ver produto</a>
+      <li class="produto" (click)="irParaProduto()">
+        <img class="imagem-produto" [src]="produto[0].imagemProduto" [alt]="produto[0].descricaoProduto">
+        <p class="nome-produto">{{ produto[0].nomeProduto }}</p>
+        <p class="preco-produto">R${{ produto[0].precoProduto }}</p>
+        <a class="link-produto">Ver produto</a>
       </li>
 
-      <li class="produto">
-        <img class="imagem-produto" src="./../../../assets/yoda.jpg" alt="Boneco Yoda">
-        <p class="nome-produto">{{ produto.nomeProduto }}</p>
-        <p class="preco-produto">R${{ produto.precoProduto }}</p>
-        <a href="#" class="link-produto">Ver produto</a>
+      <li class="produto" (click)="irParaProduto()">
+        <img class="imagem-produto" [src]="produto[0].imagemProduto" [alt]="produto[0].descricaoProduto">
+        <p class="nome-produto">{{ produto[0].nomeProduto }}</p>
+        <p class="preco-produto">R${{ produto[0].precoProduto }}</p>
+        <a class="link-produto">Ver produto</a>
       </li>
     </ul>
   </div>
@@ -60,49 +67,52 @@
   <div class="categorias">
     <div class="cabecalho-categoria">
       <h3 class="titulo-categoria">Console</h3>
-      <a href="#" class="link-ver-tudo">Ver tudo</a>
-    </div>>
+      <div class="ver-tudo" (click)="verTudo()">
+        <a class="link-ver-tudo">Ver tudo</a>
+        <img class="seta-ver-tudo" src="./../../../assets/seta.png" alt="Seta azul">
+      </div>
+    </div>
     <ul class="lista-produtos">
-      <li class="produto">
-        <img class="imagem-produto" src="./../../../assets/console.jpeg" alt="Boneco Yoda">
-        <p class="nome-produto">{{ produto.nomeProduto }}</p>
-        <p class="preco-produto">R${{ produto.precoProduto }}00</p>
-        <a href="#" class="link-produto">Ver produto</a>
+      <li class="produto" (click)="irParaProduto()">
+        <img class="imagem-produto" [src]="produto[1].imagemProduto" [alt]="produto[1].descricaoProduto">
+        <p class="nome-produto">{{ produto[1].nomeProduto }}</p>
+        <p class="preco-produto">R${{ produto[1].precoProduto }}</p>
+        <a class="link-produto">Ver produto</a>
       </li>
 
-      <li class="produto">
-        <img class="imagem-produto" src="./../../../assets/console.jpeg" alt="Boneco Yoda">
-        <p class="nome-produto">{{ produto.nomeProduto }}</p>
-        <p class="preco-produto">R${{ produto.precoProduto }}00</p>
-        <a href="#" class="link-produto">Ver produto</a>
+      <li class="produto" (click)="irParaProduto()">
+        <img class="imagem-produto" [src]="produto[1].imagemProduto" [alt]="produto[1].descricaoProduto">
+        <p class="nome-produto">{{ produto[1].nomeProduto }}</p>
+        <p class="preco-produto">R${{ produto[1].precoProduto }}</p>
+        <a class="link-produto">Ver produto</a>
       </li>
 
-      <li class="produto">
-        <img class="imagem-produto" src="./../../../assets/console.jpeg" alt="Boneco Yoda">
-        <p class="nome-produto">{{ produto.nomeProduto }}</p>
-        <p class="preco-produto">R${{ produto.precoProduto }}00</p>
-        <a href="#" class="link-produto">Ver produto</a>
+      <li class="produto" (click)="irParaProduto()">
+        <img class="imagem-produto" [src]="produto[1].imagemProduto" [alt]="produto[1].descricaoProduto">
+        <p class="nome-produto">{{ produto[1].nomeProduto }}</p>
+        <p class="preco-produto">R${{ produto[1].precoProduto }}</p>
+        <a class="link-produto">Ver produto</a>
       </li>
 
-      <li class="produto">
-        <img class="imagem-produto" src="./../../../assets/console.jpeg" alt="Boneco Yoda">
-        <p class="nome-produto">{{ produto.nomeProduto }}</p>
-        <p class="preco-produto">R${{ produto.precoProduto }}00</p>
-        <a href="#" class="link-produto">Ver produto</a>
+      <li class="produto" (click)="irParaProduto()">
+        <img class="imagem-produto" [src]="produto[1].imagemProduto" [alt]="produto[1].descricaoProduto">
+        <p class="nome-produto">{{ produto[1].nomeProduto }}</p>
+        <p class="preco-produto">R${{ produto[1].precoProduto }}</p>
+        <a class="link-produto">Ver produto</a>
       </li>
 
-      <li class="produto">
-        <img class="imagem-produto" src="./../../../assets/console.jpeg" alt="Boneco Yoda">
-        <p class="nome-produto">{{ produto.nomeProduto }}</p>
-        <p class="preco-produto">R${{ produto.precoProduto }}00</p>
-        <a href="#" class="link-produto">Ver produto</a>
+      <li class="produto" (click)="irParaProduto()">
+        <img class="imagem-produto" [src]="produto[1].imagemProduto" [alt]="produto[1].descricaoProduto">
+        <p class="nome-produto">{{ produto[1].nomeProduto }}</p>
+        <p class="preco-produto">R${{ produto[1].precoProduto }}</p>
+        <a class="link-produto">Ver produto</a>
       </li>
 
-      <li class="produto">
-        <img class="imagem-produto" src="./../../../assets/console.jpeg" alt="Boneco Yoda">
-        <p class="nome-produto">{{ produto.nomeProduto }}</p>
-        <p class="preco-produto">R${{ produto.precoProduto }}00</p>
-        <a href="#" class="link-produto">Ver produto</a>
+      <li class="produto" (click)="irParaProduto()">
+        <img class="imagem-produto" [src]="produto[1].imagemProduto" [alt]="produto[1].descricaoProduto">
+        <p class="nome-produto">{{ produto[1].nomeProduto }}</p>
+        <p class="preco-produto">R${{ produto[1].precoProduto }}</p>
+        <a class="link-produto">Ver produto</a>
       </li>
     </ul>
   </div>
@@ -110,50 +120,53 @@
   <div class="categorias">
     <div class="cabecalho-categoria">
       <h3 class="titulo-categoria">Diversos</h3>
-      <a href="#" class="link-ver-tudo">Ver tudo</a>
+      <div class="ver-tudo" (click)="verTudo()">
+        <a class="link-ver-tudo">Ver tudo</a>
+        <img class="seta-ver-tudo" src="./../../../assets/seta.png" alt="Seta azul">
+      </div>
     </div>
 
     <ul class="lista-produtos">
-      <li class="produto">
-        <img class="imagem-produto" src="./../../../assets/figure.jpg" alt="Boneco Yoda">
-        <p class="nome-produto">{{ produto.nomeProduto }}</p>
-        <p class="preco-produto">R${{ produto.precoProduto }}0</p>
-        <a href="#" class="link-produto">Ver produto</a>
+      <li class="produto" (click)="irParaProduto()">
+        <img class="imagem-produto" [src]="produto[2].imagemProduto" [alt]="produto[2].descricaoProduto">
+        <p class="nome-produto">{{ produto[2].nomeProduto }}</p>
+        <p class="preco-produto">R${{ produto[2].precoProduto }}</p>
+        <a class="link-produto">Ver produto</a>
       </li>
 
-      <li class="produto">
-        <img class="imagem-produto" src="./../../../assets/figure.jpg" alt="Boneco Yoda">
-        <p class="nome-produto">{{ produto.nomeProduto }}</p>
-        <p class="preco-produto">R${{ produto.precoProduto }}0</p>
-        <a href="#" class="link-produto">Ver produto</a>
+      <li class="produto" (click)="irParaProduto()">
+        <img class="imagem-produto" [src]="produto[2].imagemProduto" [alt]="produto[2].descricaoProduto">
+        <p class="nome-produto">{{ produto[2].nomeProduto }}</p>
+        <p class="preco-produto">R${{ produto[2].precoProduto }}</p>
+        <a class="link-produto">Ver produto</a>
       </li>
 
-      <li class="produto">
-        <img class="imagem-produto" src="./../../../assets/figure.jpg" alt="Boneco Yoda">
-        <p class="nome-produto">{{ produto.nomeProduto }}</p>
-        <p class="preco-produto">R${{ produto.precoProduto }}0</p>
-        <a href="#" class="link-produto">Ver produto</a>
+      <li class="produto" (click)="irParaProduto()">
+        <img class="imagem-produto" [src]="produto[2].imagemProduto" [alt]="produto[2].descricaoProduto">
+        <p class="nome-produto">{{ produto[2].nomeProduto }}</p>
+        <p class="preco-produto">R${{ produto[2].precoProduto }}</p>
+        <a class="link-produto">Ver produto</a>
       </li>
 
-      <li class="produto">
-        <img class="imagem-produto" src="./../../../assets/figure.jpg" alt="Boneco Yoda">
-        <p class="nome-produto">{{ produto.nomeProduto }}</p>
-        <p class="preco-produto">R${{ produto.precoProduto }}0</p>
-        <a href="#" class="link-produto">Ver produto</a>
+      <li class="produto" (click)="irParaProduto()">
+        <img class="imagem-produto" [src]="produto[2].imagemProduto" [alt]="produto[2].descricaoProduto">
+        <p class="nome-produto">{{ produto[2].nomeProduto }}</p>
+        <p class="preco-produto">R${{ produto[2].precoProduto }}</p>
+        <a class="link-produto">Ver produto</a>
       </li>
 
-      <li class="produto">
-        <img class="imagem-produto" src="./../../../assets/figure.jpg" alt="Boneco Yoda">
-        <p class="nome-produto">{{ produto.nomeProduto }}</p>
-        <p class="preco-produto">R${{ produto.precoProduto }}0</p>
-        <a href="#" class="link-produto">Ver produto</a>
+      <li class="produto" (click)="irParaProduto()">
+        <img class="imagem-produto" [src]="produto[2].imagemProduto" [alt]="produto[2].descricaoProduto">
+        <p class="nome-produto">{{ produto[2].nomeProduto }}</p>
+        <p class="preco-produto">R${{ produto[2].precoProduto }}</p>
+        <a class="link-produto">Ver produto</a>
       </li>
 
-      <li class="produto">
-        <img class="imagem-produto" src="./../../../assets/figure.jpg" alt="Boneco Yoda">
-        <p class="nome-produto">{{ produto.nomeProduto }}</p>
-        <p class="preco-produto">R${{ produto.precoProduto }}0</p>
-        <a href="#" class="link-produto">Ver produto</a>
+      <li class="produto" (click)="irParaProduto()">
+        <img class="imagem-produto" [src]="produto[2].imagemProduto" [alt]="produto[2].descricaoProduto">
+        <p class="nome-produto">{{ produto[2].nomeProduto }}</p>
+        <p class="preco-produto">R${{ produto[2].precoProduto }}</p>
+        <a class="link-produto">Ver produto</a>
       </li>
     </ul>
   </div>

@@ -16,8 +16,17 @@
   align-items: center;
 }
 
+.logo-titulo:hover{
+  cursor: pointer;
+}
+
 .primeiro-titulo{
   color: #2A7AE4;
+}
+
+.pesquisa{
+  display: flex;
+  align-items: center;
 }
 
 .barra-de-pesquisa {
@@ -27,6 +36,12 @@
   width: 393px;
   height: 40px;
   margin-left: 15px;
+  position: absolute;
+}
+
+.icone-lupa {
+  position: relative;
+  margin-left: 375px;
 }
 
 .bt-login {

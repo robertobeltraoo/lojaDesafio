@@ -1,0 +1,64 @@
+<section class="pagina-produto">
+    <div class="produto">
+        <div class="img-produto-descricao">
+            <img class="img-do-produto" [src]="produto[0].imagemProduto" [alt]="produto[0].descricaoProduto">
+        </div>
+        <div class="produto-descricao">
+            <div class="nome-produto-div">
+                <h2 class="nome-do-produto">{{ produto[0].nomeProduto }}</h2>
+            </div>
+            <div class="preco-produto-div">
+                <p class="preco-do-produto">R$ {{ produto[0].precoProduto }}.00</p>
+            </div>
+            <div class="descricao-produto-div">
+                <p class="descricao--do-produto">{{ produto[0].descricaoProduto }}</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="categorias">
+        <div class="cabecalho-categoria">
+            <h3 class="titulo-categoria">Produtos similares</h3>
+        </div>
+
+        <ul class="lista-produtos">
+            <li class="lista-produto-similar" (click)="irParaProduto()">
+                <img class="imagem-produto-similar" [src]="produto[1].imagemProduto" [alt]="produto[1].descricaoProduto">
+                <p class="nome-produto">{{ produto[1].nomeProduto }}</p>
+                <p class="preco-produto">R${{ produto[1].precoProduto }}</p>
+                <a class="link-produto">Ver produto</a>
+            </li>
+            <li class="lista-produto-similar" (click)="irParaProduto()">
+                <img class="imagem-produto-similar" [src]="produto[1].imagemProduto" [alt]="produto[1].descricaoProduto">
+                <p class="nome-produto">{{ produto[1].nomeProduto }}</p>
+                <p class="preco-produto">R${{ produto[1].precoProduto }}</p>
+                <a class="link-produto">Ver produto</a>
+            </li>
+            <li class="lista-produto-similar" (click)="irParaProduto()">
+                <img class="imagem-produto-similar" [src]="produto[1].imagemProduto" [alt]="produto[1].descricaoProduto">
+                <p class="nome-produto">{{ produto[1].nomeProduto }}</p>
+                <p class="preco-produto">R${{ produto[1].precoProduto }}</p>
+                <a class="link-produto">Ver produto</a>
+            </li>
+            <li class="lista-produto-similar" (click)="irParaProduto()">
+                <img class="imagem-produto-similar" [src]="produto[2].imagemProduto" [alt]="produto[2].descricaoProduto">
+                <p class="nome-produto">{{ produto[2].nomeProduto }}</p>
+                <p class="preco-produto">R${{ produto[2].precoProduto }}</p>
+                <a class="link-produto">Ver produto</a>
+            </li>
+            <li class="lista-produto-similar" (click)="irParaProduto()">
+                <img class="imagem-produto-similar" [src]="produto[2].imagemProduto" [alt]="produto[2].descricaoProduto">
+                <p class="nome-produto">{{ produto[2].nomeProduto }}</p>
+                <p class="preco-produto">R${{ produto[2].precoProduto }}</p>
+                <a class="link-produto">Ver produto</a>
+            </li>
+            <li class="lista-produto-similar" (click)="irParaProduto()">
+                <img class="imagem-produto-similar" [src]="produto[2].imagemProduto" [alt]="produto[2].descricaoProduto">
+                <p class="nome-produto">{{ produto[2].nomeProduto }}</p>
+                <p class="preco-produto">R${{ produto[2].precoProduto }}</p>
+                <a class="link-produto">Ver produto</a>
+            </li>
+        </ul>
+    </div>
+</section>
+
