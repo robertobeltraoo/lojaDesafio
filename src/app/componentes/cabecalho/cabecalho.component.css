@@ -46,6 +46,10 @@
   margin-left: 375px;
 }
 
+.icone-lupa:hover {
+  cursor: pointer;
+}
+
 .bt-login {
   background: #FFFFFF;
   border-width: 1px;

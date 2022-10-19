@@ -1,4 +1,5 @@
-import { Router } from '@angular/router';
+import { ProdutoService } from './../produto.service';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Produto } from '../produto';
 
@@ -26,7 +27,7 @@ export class PaginaProdutoComponent implements OnInit {
     altProduto: 'Foto PS5'
   },
   {
-    id: 1,
+    id: 3,
     nomeProduto: 'Action Figure Ace',
     precoProduto: 450.00,
     descricaoProduto: "Boneco do personagem Ace",
@@ -36,14 +37,31 @@ export class PaginaProdutoComponent implements OnInit {
   ]
   
   constructor(
-    private router: Router
+    private produtoService: ProdutoService,
+    private router: Router,
+    private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
+    this.produtoSelecionado();
+    //this.produtoSimilar();
   }
 
-
-  irParaProduto(){
-    this.router.navigate(['/paginaProduto'])
+  produtoSelecionado( ) {
+    // this.activatedRoute.params.subscribe((params) => {
+    //   if(params.produtoId) {
+    //     this.produtoId = params.produtoId;
+    //   }
+    // })
+    const idDoProduto = this.activatedRoute.snapshot.params['id'];
+    return idDoProduto;
   }
+
+  irParaProduto(idProdutos: number | any){
+    this.router.navigate([`paginaProduto/${idProdutos}`])
+  }
+
+  // produtoSimilar(){
+  //   return Math.floor(Math.random()*3)
+  // }
 }

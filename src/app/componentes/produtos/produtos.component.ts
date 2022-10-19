@@ -1,6 +1,7 @@
+import { ProdutoService } from './produto.service';
 import { Produto } from './produto';
 import { Component, Input, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-produtos',
@@ -24,7 +25,7 @@ export class ProdutosComponent implements OnInit {
     altProduto: 'Foto PS5'
   },
   {
-    id: 1,
+    id: 3,
     nomeProduto: 'Action Figure Ace',
     precoProduto: 450.00,
     imagemProduto: "./../../../../assets/figure.jpg",
@@ -33,17 +34,21 @@ export class ProdutosComponent implements OnInit {
   ]
 
   constructor(
-    private router: Router
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+    private produtoService: ProdutoService
   ) { }
 
   ngOnInit(): void {
+     
+  }
+
+  irParaProduto(idProdutos: number | any){
+    this.router.navigate([`paginaProduto/${idProdutos}`])
   }
 
   verTudo(){
     this.router.navigate(['/todosOsProdutos'])
   }
 
-  irParaProduto(){
-    this.router.navigate(['/paginaProduto'])
-  }
 }

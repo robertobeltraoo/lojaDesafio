@@ -9,7 +9,7 @@ import { Produto } from '../produto';
 })
 export class TodosOsProdutosComponent implements OnInit {
 
-  produtoHome: Produto[] = [{
+  produto: Produto[] = [{
     id: 1,
     nomeProduto: 'Baby Yoda',
     precoProduto: 60.00,
@@ -24,7 +24,7 @@ export class TodosOsProdutosComponent implements OnInit {
     altProduto: 'Foto PS5'
   },
   {
-    id: 1,
+    id: 3,
     nomeProduto: 'Action Figure Ace',
     precoProduto: 450.00,
     imagemProduto: "./../../../../assets/figure.jpg",
@@ -39,7 +39,7 @@ export class TodosOsProdutosComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  irParaProduto(){
-    this.router.navigate(['/paginaProduto'])
+  irParaProduto(idProdutos: number | any){
+    this.router.navigate([`paginaProduto/${idProdutos}`])
   }
 }
