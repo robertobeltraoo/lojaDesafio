@@ -1,5 +1,5 @@
 import { PaginaProdutoComponent } from './componentes/produtos/pagina-produto/pagina-produto.component';
-import { ProdutosComponent } from './componentes/produtos/produtos.component';
+import { ProdutosHomeComponent } from './componentes/produtos/produtosHome/produtos-home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TodosOsProdutosComponent } from './componentes/produtos/todos-os-produtos/todos-os-produtos.component';
@@ -8,12 +8,12 @@ import { LoginComponent } from './componentes/login/login.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'produtos',
+    redirectTo: 'produtosHome',
     pathMatch: 'full'
   },
   {
-    path: 'produtos',
-    component: ProdutosComponent
+    path: 'produtosHome',
+    component: ProdutosHomeComponent
   },
   {
     path: 'todosOsProdutos',

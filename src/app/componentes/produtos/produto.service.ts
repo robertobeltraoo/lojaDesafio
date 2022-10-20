@@ -1,19 +1,31 @@
 import { Produto } from './produto';
 import { Injectable } from '@angular/core';
-import { HttpClient } from  '@angular/common/http'
+import { HttpClient, HttpParams } from  '@angular/common/http'
 import { Observable } from 'rxjs';
 
-const API = 'http://localhost:4200/'
 
 @Injectable({ providedIn: 'root' })
 export class ProdutoService {
-
+  private readonly API = 'http://localhost:3000/produtos'
+  
   constructor(
     private http: HttpClient
   ) { }
 
-    produtoSelecionado(produtoId: number): Observable<Produto[]>{
+    listarProdutos( ): Observable<Produto[]>{
+      
+      //depois colocaro filtro categoria para mostrar os produtos de uma unica categoria
+      // let params = new HttpParams()
+      
+      // if(categoria.trim() === "starwars")
+      //   params = params.set("q", categoria)
+      
       return this.http
-        .get<Produto[]>(`${API}paginaProduto/${produtoId}`);
+        .get<Produto[]>(this.API);
+    }
+
+    mostrarProduto(id: number): Observable<Produto>{
+        const url = `${this.API}/${id}`
+        return this.http.get<Produto>(url)
     }
 }

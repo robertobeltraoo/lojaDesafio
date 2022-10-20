@@ -1,3 +1,7 @@
+li {
+  list-style: none;
+}
+
 .pagina-produto {
     background: #f5f5f5;
     height: 130vh;
@@ -27,7 +31,7 @@
 
 .nome-produto-div{
     width: 560px;
-    height: 61px;
+    max-height: 140px;
 }
 
 .nome-do-produto{

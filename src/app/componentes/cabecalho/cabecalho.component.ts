@@ -18,7 +18,7 @@ export class CabecalhoComponent implements OnInit {
   voltarPaginaPrincipal(){
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
     this.router.onSameUrlNavigation = 'reload';
-    this.router.navigate(['/produtos']);
+    this.router.navigate(['/produtosHome']);
   }
 
 }

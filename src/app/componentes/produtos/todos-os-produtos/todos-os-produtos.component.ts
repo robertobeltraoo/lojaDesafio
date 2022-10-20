@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Produto } from '../produto';
+import { ProdutoService } from '../produto.service';
 
 @Component({
   selector: 'app-todos-os-produtos',
@@ -9,37 +10,21 @@ import { Produto } from '../produto';
 })
 export class TodosOsProdutosComponent implements OnInit {
 
-  produto: Produto[] = [{
-    id: 1,
-    nomeProduto: 'Baby Yoda',
-    precoProduto: 60.00,
-    imagemProduto: "./../../../../assets/yoda.jpg",
-    altProduto: 'Foto boneco do Yoda'
-  },
-  {
-    id: 2,
-    nomeProduto: 'PS5',
-    precoProduto: 6000.00,
-    imagemProduto: "./../../../../assets/console.jpeg",
-    altProduto: 'Foto PS5'
-  },
-  {
-    id: 3,
-    nomeProduto: 'Action Figure Ace',
-    precoProduto: 450.00,
-    imagemProduto: "./../../../../assets/figure.jpg",
-    altProduto: 'Foto action figure Ace'
-  }
-  ]
+  listaProduto: Produto[] = [];
 
   constructor(
-    private router: Router
+    private router: Router,
+    private produtoService: ProdutoService
   ) { }
 
   ngOnInit(): void {
+    this.produtoService.listarProdutos()
+      .subscribe((listaProduto) => {
+        this.listaProduto = listaProduto
+      })
   }
 
-  irParaProduto(idProdutos: number | any){
-    this.router.navigate([`paginaProduto/${idProdutos}`])
-  }
+  // irParaProduto(idProdutos: number | any){
+  //   this.router.navigate([`paginaProduto/${idProdutos}`])
+  // }
 }

@@ -3,19 +3,19 @@
 <section class="pagina-produto">
     <div class="produto">
         <div class="img-produto-descricao">
-            <img class="img-do-produto" [src]="produto[produtoSelecionado()-1].imagemProduto" [alt]="produto[produtoSelecionado()-1].descricaoProduto">
+            <img class="img-do-produto" src="./../../../../assets/{{ produto.imagemProduto }}" [alt]="produto.altProduto">
         </div>
         <div class="produto-descricao">
             <div class="nome-produto-div">
-                <h2 class="nome-do-produto">{{ produto[produtoSelecionado()-1].nomeProduto }}</h2>
+                <h2 class="nome-do-produto">{{ produto.nomeProduto }}</h2>
             </div>
             <div class="preco-produto-div">
-                <p class="preco-do-produto">R$ {{ produto[produtoSelecionado()-1].precoProduto }}</p>
+                <p class="preco-do-produto">R$ {{ produto.precoProduto }}</p>
             </div>
             <div class="descricao-produto-div">
-                <p class="descricao--do-produto">{{ produto[produtoSelecionado()-1].descricaoProduto }}</p>
+                <p class="descricao--do-produto">{{ produto.descricaoProduto }}</p>
             </div>
-        </div>
+        </div>>
     </div>
 
     <div class="categorias">
@@ -24,41 +24,8 @@
         </div>
 
         <ul class="lista-produtos">
-            <li class="lista-produto-similar" (click)="irParaProduto(produto[1].id)">
-                <img class="imagem-produto-similar" [src]="produto[1].imagemProduto" [alt]="produto[1].descricaoProduto">
-                <p class="nome-produto">{{ produto[1].nomeProduto }}</p>
-                <p class="preco-produto">R${{ produto[1].precoProduto }}</p>
-                <a class="link-produto">Ver produto</a>
-            </li>
-            <li class="lista-produto-similar" (click)="irParaProduto(produto[0].id)">
-                <img class="imagem-produto-similar" [src]="produto[0].imagemProduto" [alt]="produto[0].descricaoProduto">
-                <p class="nome-produto">{{ produto[0].nomeProduto }}</p>
-                <p class="preco-produto">R${{ produto[0].precoProduto }}</p>
-                <a class="link-produto">Ver produto</a>
-            </li>
-            <li class="lista-produto-similar" (click)="irParaProduto(produto[1].id)">
-                <img class="imagem-produto-similar" [src]="produto[1].imagemProduto" [alt]="produto[1].descricaoProduto">
-                <p class="nome-produto">{{ produto[1].nomeProduto }}</p>
-                <p class="preco-produto">R${{ produto[1].precoProduto }}</p>
-                <a class="link-produto">Ver produto</a>
-            </li>
-            <li class="lista-produto-similar" (click)="irParaProduto(produto[2].id)">
-                <img class="imagem-produto-similar" [src]="produto[2].imagemProduto" [alt]="produto[2].descricaoProduto">
-                <p class="nome-produto">{{ produto[2].nomeProduto }}</p>
-                <p class="preco-produto">R${{ produto[2].precoProduto }}</p>
-                <a class="link-produto">Ver produto</a>
-            </li>
-            <li class="lista-produto-similar" (click)="irParaProduto(produto[0].id)">
-                <img class="imagem-produto-similar" [src]="produto[0].imagemProduto" [alt]="produto[0].descricaoProduto">
-                <p class="nome-produto">{{ produto[0].nomeProduto }}</p>
-                <p class="preco-produto">R${{ produto[0].precoProduto }}</p>
-                <a class="link-produto">Ver produto</a>
-            </li>
-            <li class="lista-produto-similar" (click)="irParaProduto(produto[2].id)">
-                <img class="imagem-produto-similar" [src]="produto[2].imagemProduto" [alt]="produto[2].descricaoProduto">
-                <p class="nome-produto">{{ produto[2].nomeProduto }}</p>
-                <p class="preco-produto">R${{ produto[2].precoProduto }}</p>
-                <a class="link-produto">Ver produto</a>
+            <li *ngFor="let produtos of listaProduto">
+              <app-card-produto [produto]="produtos"></app-card-produto>
             </li>
         </ul>
     </div>

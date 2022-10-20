@@ -1,7 +1,8 @@
 import { ProdutoService } from './../produto.service';
 import { Router, ActivatedRoute } from '@angular/router';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Produto } from '../produto';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-pagina-produto',
@@ -10,58 +11,46 @@ import { Produto } from '../produto';
 })
 export class PaginaProdutoComponent implements OnInit {
 
-  produto: Produto[] = [{
-    id: 1,
-    nomeProduto: 'Baby Yoda',
-    precoProduto: 60.00,
-    descricaoProduto: "Esse brinquedo de pelúcia de A Criança de 11 polegadas vai roubar os corações dos fãs de Star Wars em todo lugar! Inspirado pela série da Disney+, O Mandaloriano, o adorável boneco de pele verde, grandes orelhas e olhos se parece com um bebê Yoda, mas é chamado de A Criança. O brinquedo de pelúcia tem corpo macio, além de uma base firme cheia de grãos, perfeito para abraçar ou exibir como um item de colecionador. O personagem ​usa roupas iguais aos do programa. Os fãs de ​Star Wars vão adorar assumir o papel do caçador de recompensas Mandaloriano e cuidar da Criança por conta própria!",
-    imagemProduto: "./../../../../assets/yoda.jpg",
-    altProduto: 'Foto boneco do Yoda'
-  },
-  {
-    id: 2,
-    nomeProduto: 'PS5',
-    precoProduto: 6000.00,
-    descricaoProduto: "Console de ultima geração da sony",
-    imagemProduto: "./../../../../assets/console.jpeg",
-    altProduto: 'Foto PS5'
-  },
-  {
-    id: 3,
-    nomeProduto: 'Action Figure Ace',
-    precoProduto: 450.00,
-    descricaoProduto: "Boneco do personagem Ace",
-    imagemProduto: "./../../../../assets/figure.jpg",
-    altProduto: 'Foto action figure Ace'
+  listaProduto: Produto[] = []
+
+  produto: Produto = {
+    id: 0,
+    nomeProduto: '',
+    precoProduto: 0,
+    descricaoProduto: '',
+    imagemProduto: '',
+    altProduto: '',
+    categoria: ''
   }
-  ]
   
   constructor(
     private produtoService: ProdutoService,
     private router: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private location: Location
   ) { }
 
   ngOnInit(): void {
+    this.produtoService.listarProdutos()
+      .subscribe((listaProduto) => {
+        this.listaProduto = listaProduto
+      })
+    
     this.produtoSelecionado();
     //this.produtoSimilar();
   }
 
-  produtoSelecionado( ) {
-    // this.activatedRoute.params.subscribe((params) => {
-    //   if(params.produtoId) {
-    //     this.produtoId = params.produtoId;
-    //   }
-    // })
+  produtoSelecionado() {    
     const idDoProduto = this.activatedRoute.snapshot.params['id'];
-    return idDoProduto;
+    this.produtoService.mostrarProduto(idDoProduto)
+    .subscribe((produto) => {
+      this.produto = produto
+    })
   }
 
   irParaProduto(idProdutos: number | any){
     this.router.navigate([`paginaProduto/${idProdutos}`])
+    location.reload()
   }
 
-  // produtoSimilar(){
-  //   return Math.floor(Math.random()*3)
-  // }
 }

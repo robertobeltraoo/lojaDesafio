@@ -1,5 +1,5 @@
 .container-banner {
-  background: url("../../../assets/banner.jpeg") no-repeat;
+  background: url("../../../../assets/banner.jpeg") no-repeat;
   background-size: cover;
   display: flex;
   height: 50vh;

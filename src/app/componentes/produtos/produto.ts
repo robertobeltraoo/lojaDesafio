@@ -3,6 +3,7 @@ export interface Produto {
   nomeProduto: string
   precoProduto: number
   descricaoProduto?: string
-  imagemProduto?: string,
+  imagemProduto?: string
   altProduto?: string
+  categoria?: string
 }
