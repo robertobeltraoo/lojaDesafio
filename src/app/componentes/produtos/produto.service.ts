@@ -12,16 +12,25 @@ export class ProdutoService {
     private http: HttpClient
   ) { }
 
-    listarProdutos( ): Observable<Produto[]>{
+    listarProdutos(categoria: string, itensPorListagem: boolean): Observable<Produto[]>{
       
+      let params = new HttpParams()
+      
+      if(itensPorListagem === true){
+        params = params.set("_limit", itensPorListagem)
+      }
+
+      if(categoria.trim().length > 2){
+        params = params.set("q", categoria)
+      }
+
       //depois colocaro filtro categoria para mostrar os produtos de uma unica categoria
-      // let params = new HttpParams()
       
       // if(categoria.trim() === "starwars")
       //   params = params.set("q", categoria)
       
       return this.http
-        .get<Produto[]>(this.API);
+        .get<Produto[]>(this.API, { params });
     }
 
     mostrarProduto(id: number): Observable<Produto>{

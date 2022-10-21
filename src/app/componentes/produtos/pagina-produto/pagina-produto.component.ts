@@ -22,6 +22,8 @@ export class PaginaProdutoComponent implements OnInit {
     altProduto: '',
     categoria: ''
   }
+  itensPorListagem: boolean = false
+  categoriaListada: string = ''
   
   constructor(
     private produtoService: ProdutoService,
@@ -31,7 +33,8 @@ export class PaginaProdutoComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.produtoService.listarProdutos()
+    
+    this.produtoService.listarProdutos(this.categoriaListada ,this.itensPorListagem)
       .subscribe((listaProduto) => {
         this.listaProduto = listaProduto
       })
@@ -48,9 +51,11 @@ export class PaginaProdutoComponent implements OnInit {
     })
   }
 
-  irParaProduto(idProdutos: number | any){
-    this.router.navigate([`paginaProduto/${idProdutos}`])
-    location.reload()
+  mudarProduto(idProdutos: number | any){
+    // this.router.navigate([`paginaProduto/${idProdutos}`])
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.onSameUrlNavigation = 'reload';
+    this.router.navigate([this.router.url]);
   }
 
 }

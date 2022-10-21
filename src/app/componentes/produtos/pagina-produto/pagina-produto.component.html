@@ -1,4 +1,8 @@
 <!--[] fazer com que produto similar mostre produtos que tem o mesmo valor na coluna "categoria" (coluna a ser adicionada)
+
+    [v] falta fazer mudar a pagina quando escolhe um produto similar(obs: funçao tem q ser feita no card-produto.ts)
+    -> feito: a função ir para produto do card produto muda a url e mudar produto da refresh na pagina para q carregue 
+    o produto da nova url 
 -->
 <section class="pagina-produto">
     <div class="produto">
@@ -15,7 +19,7 @@
             <div class="descricao-produto-div">
                 <p class="descricao--do-produto">{{ produto.descricaoProduto }}</p>
             </div>
-        </div>>
+        </div>
     </div>
 
     <div class="categorias">
@@ -24,8 +28,8 @@
         </div>
 
         <ul class="lista-produtos">
-            <li *ngFor="let produtos of listaProduto">
-              <app-card-produto [produto]="produtos"></app-card-produto>
+            <li *ngFor="let produtos of listaProduto | slice:0:6; index as i">
+              <app-card-produto [produto]="produtos" (click)="mudarProduto(produto.id)"></app-card-produto>
             </li>
         </ul>
     </div>

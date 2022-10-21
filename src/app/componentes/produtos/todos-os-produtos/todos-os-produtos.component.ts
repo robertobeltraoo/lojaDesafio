@@ -18,10 +18,10 @@ export class TodosOsProdutosComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.produtoService.listarProdutos()
-      .subscribe((listaProduto) => {
-        this.listaProduto = listaProduto
-      })
+    // this.produtoService.listarProdutos()
+    //   .subscribe((listaProduto) => {
+    //     this.listaProduto = listaProduto
+    //   })
   }
 
   // irParaProduto(idProdutos: number | any){

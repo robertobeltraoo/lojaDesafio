@@ -9,6 +9,12 @@
        .listaDeProdutos(idProdutos)
        .subscribe(produto => this.produto = produto)
   para fazer a rota listar os produtos da categoria
+  outra alternativa: fazer um service parecido com o pegar por id e trocar id por categoria, e fazer os metodos parecidos com
+  a pagina do produto e trocar os id por categoria
+
+  ou criar uma funcao q tera uma lista q receberar apenas os objetos com a categoria especifica
+
+  rodar titulo-categoria de acordo com o banco categoriaDB e comparar os produtos q tenham categoria compativel
 
 
   [v] colocar na funçao click um parametro pra passar produto[n].nome para identificar o produto na função e redirecionar
@@ -34,58 +40,21 @@
 <section class="container-produtos">
   <div class="categorias">
     <div class="cabecalho-categoria">
-      <h3 class="titulo-categoria">Star Wars</h3>
-      <div class="ver-tudo" (click)="verTudo()">
+      <h3 class="titulo-categoria">{{ categoriaDB.nomecategoria }}</h3>
+      <div class="ver-tudo" >
         <a class="link-ver-tudo">Ver tudo</a>
         <img class="seta-ver-tudo" src="./../../../../assets/seta.png" alt="Seta azul">
       </div>
     </div>
     <ul class="lista-produtos">
-      <li class="produto" (click)="irParaProduto(produto[0].id)">
-        <img class="imagem-produto" [src]="produto[0].imagemProduto" [alt]="produto[0].descricaoProduto">
-        <p class="nome-produto">{{ produto[0].nomeProduto }}</p>
-        <p class="preco-produto">R${{ produto[0].precoProduto }}</p>
-        <a class="link-produto">Ver produto</a>
-      </li>
-
-      <li class="produto" (click)="irParaProduto(produto[0].id)">
-      <img class="imagem-produto" [src]="produto[0].imagemProduto" [alt]="produto[0].descricaoProduto">
-        <p class="nome-produto">{{ produto[0].nomeProduto }}</p>
-        <p class="preco-produto">R${{ produto[0].precoProduto }}</p>
-        <a class="link-produto">Ver produto</a>
-      </li>
-
-      <li class="produto" (click)="irParaProduto(produto[0].id)">
-      <img class="imagem-produto" [src]="produto[0].imagemProduto" [alt]="produto[0].descricaoProduto">
-        <p class="nome-produto">{{ produto[0].nomeProduto }}</p>
-        <p class="preco-produto">R${{ produto[0].precoProduto }}</p>
-        <a class="link-produto">Ver produto</a>
-      </li>
-
-      <li class="produto" (click)="irParaProduto(produto[0].id)">
-      <img class="imagem-produto" [src]="produto[0].imagemProduto" [alt]="produto[0].descricaoProduto">
-        <p class="nome-produto">{{ produto[0].nomeProduto }}</p>
-        <p class="preco-produto">R${{ produto[0].precoProduto }}</p>
-        <a class="link-produto">Ver produto</a>
-      </li>
-
-      <li class="produto" (click)="irParaProduto(produto[0].id)">
-      <img class="imagem-produto" [src]="produto[0].imagemProduto" [alt]="produto[0].descricaoProduto">
-        <p class="nome-produto">{{ produto[0].nomeProduto }}</p>
-        <p class="preco-produto">R${{ produto[0].precoProduto }}</p>
-        <a class="link-produto">Ver produto</a>
-      </li>
-
-      <li class="produto" (click)="irParaProduto(produto[0].id)">
-      <img class="imagem-produto" [src]="produto[0].imagemProduto" [alt]="produto[0].descricaoProduto">
-        <p class="nome-produto">{{ produto[0].nomeProduto }}</p>
-        <p class="preco-produto">R${{ produto[0].precoProduto }}</p>
-        <a class="link-produto">Ver produto</a>
+      <li class="produto" (click)="irParaProduto(produto.id)" 
+      >
+        <app-card-produto>{{ listaProdutoCategoria }}</app-card-produto>
       </li>
     </ul>
   </div>
 
-  <div class="categorias">
+  <!-- <div class="categorias">
     <div class="cabecalho-categoria">
       <h3 class="titulo-categoria">Console</h3>
       <div class="ver-tudo" (click)="verTudo()">
@@ -190,5 +159,5 @@
         <a class="link-produto">Ver produto</a>
       </li>
     </ul>
-  </div>
+  </div> -->
 </section>
