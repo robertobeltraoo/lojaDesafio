@@ -1,59 +1,71 @@
-import { ProdutoService } from './../produto.service';
-import { Produto } from './../produto';
-import { Component, Input ,OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { ActivatedRoute, Router } from "@angular/router";
+import { Categoria } from "../categoria";
+import { Produto } from "./../produto";
+import { ProdutoService } from "./../produto.service";
 
 @Component({
-  selector: 'app-produtos',
-  templateUrl: './produtos-home.component.html',
-  styleUrls: ['./produtos-home.component.css']
+  selector: "app-produtos",
+  templateUrl: "./produtos-home.component.html",
+  styleUrls: ["./produtos-home.component.css"],
 })
 export class ProdutosHomeComponent implements OnInit {
-  
   // @Input() category!: string;
   listaProduto: Produto[] = [];
+  categorias: Categoria[] = [];
   produto: Produto = {
     id: 0,
-    nomeProduto: '',
+    nomeProduto: "",
     precoProduto: 0,
-    descricaoProduto: '',
-    imagemProduto: '',
-    altProduto: '',
-    categoria: ''
-  }
-  categoriaTeste: string = 'starwars'
-  
+    descricaoProduto: "",
+    imagemProduto: "",
+    altProduto: "",
+    categoria: "",
+  };
+  categoriaTeste: string = "starwars";
 
   constructor(
     private router: Router,
     private activatedRoute: ActivatedRoute,
     private produtoService: ProdutoService
-  ) { }
+  ) {}
 
   ngOnInit(): void {
-  this.listarPorCategoria(this.categoriaTeste)
+    this.listarCategorias();
   }
 
-  irParaProduto(idProdutos: number | any){
-    this.router.navigate([`paginaProduto/${idProdutos}`])
+  irParaProduto(idProdutos: number | any) {
+    this.router.navigate([`paginaProduto/${idProdutos}`]);
   }
 
-  listarPorCategoria(categoria: string){
-    this.produtoService.listarPorCategoria(categoria, true)
-      .subscribe((listaProdutos) => {
-        this.listaProduto = listaProdutos
-      })
+  listarCategorias() {
+    return this.produtoService
+      .listarCategorias()
+      .subscribe(async (categorias) => {
+        this.categorias = categorias;
+        this.listarPorCategoria();
+      });
   }
 
-  mudarProduto(idProdutos: number | any){
+  listarPorCategoria() {
+    this.categorias.flatMap((categoria) => {
+      this.produtoService
+        .listarPorCategoria(categoria.nome)
+        .subscribe((listaProdutos) => {
+          categoria.produtos = listaProdutos;
+        });
+    });
+  }
+
+  mudarProduto(idProdutos: number | any) {
     // this.router.navigate([`paginaProduto/${idProdutos}`])
     this.router.routeReuseStrategy.shouldReuseRoute = () => false;
-    this.router.onSameUrlNavigation = 'reload';
+    this.router.onSameUrlNavigation = "reload";
     this.router.navigate([this.router.url]);
   }
 
-  irParaPaginaDaCategoria(categoria: string | any){
-    this.router.navigate([`todosOsProdutos/${categoria}`])
+  irParaPaginaDaCategoria(categoria: string | any) {
+    this.router.navigate([`todosOsProdutos/${categoria}`]);
   }
 }
 
