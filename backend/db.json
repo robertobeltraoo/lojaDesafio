@@ -1,122 +1,138 @@
 {
-    "produtos": [
-        {
-            "id": 1,
-            "nomeProduto": "Baby Yoda",
-            "precoProduto": 60.00,
-            "imagemProduto": "yoda.jpg",
-            "altProduto": "Foto do produto",
-            "descricaoProduto": "Esse brinquedo de pelúcia de A Criança de 11 polegadas vai roubar os corações dos fãs de Star Wars em todo lugar! Inspirado pela série da Disney+, O Mandaloriano, o adorável boneco de pele verde, grandes orelhas e olhos se parece com um bebê Yoda, mas é chamado de A Criança. O brinquedo de pelúcia tem corpo macio, além de uma base firme cheia de grãos, perfeito para abraçar ou exibir como um item de colecionador. O personagem ​usa roupas iguais aos do programa. Os fãs de ​Star Wars vão adorar assumir o papel do caçador de recompensas Mandaloriano e cuidar da Criança por conta própria!",
-            "categoria": "starwars"
-        },
-        {
-            "id": 2,
-            "nomeProduto": "PS5",
-            "precoProduto": 6000.00,
-            "imagemProduto": "console.jpeg",
-            "altProduto": "Foto do produto",
-            "descricaoProduto": "Console de ultima geração da sony",
-            "categoria": "consoles"
-        },
-        {
-            "id": 3,
-            "nomeProduto": "Action Figure Ace",
-            "precoProduto": 450.00,
-            "imagemProduto": "figure.jpg",
-            "altProduto": "Foto do produto",
-            "descricaoProduto": "Boneco do personagem Ace",
-            "categoria": "diversos"
-        },
-        {
-            "id": 4,
-            "nomeProduto": "Quadro poster Mandalorian",
-            "precoProduto": 50.99,
-            "imagemProduto": "postMandalorianStarWars.jpg", 
-            "altProduto": "Foto do produto",
-            "descricaoProduto": "Post decorativo com tematica da serie O Mandaloriano da Disney.",
-            "categoria": "starwars"
-        },
-        {
-            "id": 5,
-            "nomeProduto": "Quadro poster do luffy",
-            "precoProduto": 50.99,
-            "imagemProduto": "quadroLuffy.jpg", 
-            "altProduto": "Foto do produto",
-            "descricaoProduto": "Post decorativo com tematica do anime one piece, imagem do personagem luffy no cartaz de procurado.",
-            "categoria": "diversos"
-        },
-        {
-            "id": 6,
-            "nomeProduto": "Livro historia do Yoda",
-            "precoProduto": 99.99,
-            "imagemProduto": "livroYoda.jpg", 
-            "altProduto": "Foto do produto",
-            "descricaoProduto": "Livro edicação colecionador, capa dura, historia do Yoda.",
-            "categoria": "starwars"
-        },
-        {
-            "id": 7,
-            "nomeProduto": "PS5 Dois",
-            "precoProduto": 6000.00,
-            "imagemProduto": "console.jpeg",
-            "altProduto": "Foto do produto",
-            "descricaoProduto": "Console de ultima geração da sony",
-            "categoria": "consoles"
-        },
-        {
-            "id": 8,
-            "nomeProduto": "Livro codigo de caçador",
-            "precoProduto": 89.99,
-            "imagemProduto": "livroStarWars.jpg", 
-            "altProduto": "Foto do produto",
-            "descricaoProduto": "Livro codigo de conduta de um caçador. ..................................................................................................................................................................................................",
-            "categoria": "starwars"
-        },
-        {
-            "id": 9,
-            "nomeProduto": "Livro de instrução para cadetes",
-            "precoProduto": 199.99,
-            "imagemProduto": "instrucaoEstudanteStarWars.jpg", 
-            "altProduto": "Foto do produto",
-            "descricaoProduto": "Livro edicação colecionador, com as intruções para novos cadetes da republica.",
-            "categoria": "starwars"
-        },
-        {
-            "id": 10,
-            "nomeProduto": "PS5 tres",
-            "precoProduto": 6000.00,
-            "imagemProduto": "console.jpeg",
-            "altProduto": "Foto do produto",
-            "descricaoProduto": "Console de ultima geração da sony",
-            "categoria": "consoles"
-        },
-        {
-            "id": 11,
-            "nomeProduto": "Caneca Star Wars",
-            "precoProduto": 39.99,
-            "imagemProduto": "canecaStarWars.jpg", 
-            "altProduto": "Foto do produto",
-            "descricaoProduto": "Caneca de colecionador Star Wars com capacidade de 500ml e material termico.",
-            "categoria": "starwars"
-        },
-        {
-            "id": 12,
-            "nomeProduto": "PS5 Quatro",
-            "precoProduto": 6000.00,
-            "imagemProduto": "console.jpeg",
-            "altProduto": "Foto do produto",
-            "descricaoProduto": "Console de ultima geração da sony",
-            "categoria": "consoles"
-        },
-        {
-            "id": 13,
-            "nomeProduto": "Caixa de musica Star Wars",
-            "precoProduto": 99.99,
-            "imagemProduto": "caixaMusicaStarWars.jpg", 
-            "altProduto": "Foto do produto",
-            "descricaoProduto": "Caixa de musica colecionavel, toca musica de abertura dos filmes.",
-            "categoria": "starwars"
-        }
-    ]
-    
+  "categorias": [
+    {
+      "id": 1,
+      "nome": "starwars",
+      "slug": "Star Wars"
+    },
+    {
+      "id": 2,
+      "nome": "consoles",
+      "slug": "Consoles"
+    },
+    {
+      "id": 3,
+      "nome": "diversos",
+      "slug": "Diversos"
+    }
+  ],
+  "produtos": [
+    {
+      "id": 1,
+      "nomeProduto": "Baby Yoda",
+      "precoProduto": 60.0,
+      "imagemProduto": "yoda.jpg",
+      "altProduto": "Foto do produto",
+      "descricaoProduto": "Esse brinquedo de pelúcia de A Criança de 11 polegadas vai roubar os corações dos fãs de Star Wars em todo lugar! Inspirado pela série da Disney+, O Mandaloriano, o adorável boneco de pele verde, grandes orelhas e olhos se parece com um bebê Yoda, mas é chamado de A Criança. O brinquedo de pelúcia tem corpo macio, além de uma base firme cheia de grãos, perfeito para abraçar ou exibir como um item de colecionador. O personagem ​usa roupas iguais aos do programa. Os fãs de ​Star Wars vão adorar assumir o papel do caçador de recompensas Mandaloriano e cuidar da Criança por conta própria!",
+      "categoria": "starwars"
+    },
+    {
+      "id": 2,
+      "nomeProduto": "PS5",
+      "precoProduto": 6000.0,
+      "imagemProduto": "console.jpeg",
+      "altProduto": "Foto do produto",
+      "descricaoProduto": "Console de ultima geração da sony",
+      "categoria": "consoles"
+    },
+    {
+      "id": 3,
+      "nomeProduto": "Action Figure Ace",
+      "precoProduto": 450.0,
+      "imagemProduto": "figure.jpg",
+      "altProduto": "Foto do produto",
+      "descricaoProduto": "Boneco do personagem Ace",
+      "categoria": "diversos"
+    },
+    {
+      "id": 4,
+      "nomeProduto": "Quadro poster Mandalorian",
+      "precoProduto": 50.99,
+      "imagemProduto": "postMandalorianStarWars.jpg",
+      "altProduto": "Foto do produto",
+      "descricaoProduto": "Post decorativo com tematica da serie O Mandaloriano da Disney.",
+      "categoria": "starwars"
+    },
+    {
+      "id": 5,
+      "nomeProduto": "Quadro poster do luffy",
+      "precoProduto": 50.99,
+      "imagemProduto": "quadroLuffy.jpg",
+      "altProduto": "Foto do produto",
+      "descricaoProduto": "Post decorativo com tematica do anime one piece, imagem do personagem luffy no cartaz de procurado.",
+      "categoria": "diversos"
+    },
+    {
+      "id": 6,
+      "nomeProduto": "Livro historia do Yoda",
+      "precoProduto": 99.99,
+      "imagemProduto": "livroYoda.jpg",
+      "altProduto": "Foto do produto",
+      "descricaoProduto": "Livro edicação colecionador, capa dura, historia do Yoda.",
+      "categoria": "starwars"
+    },
+    {
+      "id": 7,
+      "nomeProduto": "PS5 Dois",
+      "precoProduto": 6000.0,
+      "imagemProduto": "console.jpeg",
+      "altProduto": "Foto do produto",
+      "descricaoProduto": "Console de ultima geração da sony",
+      "categoria": "consoles"
+    },
+    {
+      "id": 8,
+      "nomeProduto": "Livro codigo de caçador",
+      "precoProduto": 89.99,
+      "imagemProduto": "livroStarWars.jpg",
+      "altProduto": "Foto do produto",
+      "descricaoProduto": "Livro codigo de conduta de um caçador. ..................................................................................................................................................................................................",
+      "categoria": "starwars"
+    },
+    {
+      "id": 9,
+      "nomeProduto": "Livro de instrução para cadetes",
+      "precoProduto": 199.99,
+      "imagemProduto": "instrucaoEstudanteStarWars.jpg",
+      "altProduto": "Foto do produto",
+      "descricaoProduto": "Livro edicação colecionador, com as intruções para novos cadetes da republica.",
+      "categoria": "starwars"
+    },
+    {
+      "id": 10,
+      "nomeProduto": "PS5 tres",
+      "precoProduto": 6000.0,
+      "imagemProduto": "console.jpeg",
+      "altProduto": "Foto do produto",
+      "descricaoProduto": "Console de ultima geração da sony",
+      "categoria": "consoles"
+    },
+    {
+      "id": 11,
+      "nomeProduto": "Caneca Star Wars",
+      "precoProduto": 39.99,
+      "imagemProduto": "canecaStarWars.jpg",
+      "altProduto": "Foto do produto",
+      "descricaoProduto": "Caneca de colecionador Star Wars com capacidade de 500ml e material termico.",
+      "categoria": "starwars"
+    },
+    {
+      "id": 12,
+      "nomeProduto": "PS5 Quatro",
+      "precoProduto": 6000.0,
+      "imagemProduto": "console.jpeg",
+      "altProduto": "Foto do produto",
+      "descricaoProduto": "Console de ultima geração da sony",
+      "categoria": "consoles"
+    },
+    {
+      "id": 13,
+      "nomeProduto": "Caixa de musica Star Wars",
+      "precoProduto": 99.99,
+      "imagemProduto": "caixaMusicaStarWars.jpg",
+      "altProduto": "Foto do produto",
+      "descricaoProduto": "Caixa de musica colecionavel, toca musica de abertura dos filmes.",
+      "categoria": "starwars"
+    }
+  ]
 }
