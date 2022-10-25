@@ -1,3 +1,6 @@
+li {
+  list-style: none;
+}
 .container-banner {
   background: url("../../../../assets/banner.jpeg") no-repeat;
   background-size: cover;
@@ -55,6 +58,7 @@
 
 .lista-produtos {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
   margin: 0px;
   padding-bottom: 2.5rem;

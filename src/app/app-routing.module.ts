@@ -20,6 +20,10 @@ const routes: Routes = [
     component: TodosOsProdutosComponent
   },
   {
+    path: 'todosOsProdutos/:categoria',
+    component: TodosOsProdutosComponent
+  },
+  {
     path: 'login',
     component: LoginComponent
   },

@@ -23,18 +23,16 @@ export class PaginaProdutoComponent implements OnInit {
     categoria: ''
   }
   itensPorListagem: boolean = false
-  categoriaListada: string = ''
   
   constructor(
     private produtoService: ProdutoService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private location: Location
   ) { }
 
   ngOnInit(): void {
     
-    this.produtoService.listarProdutos(this.categoriaListada ,this.itensPorListagem)
+    this.produtoService.listarProdutos(this.itensPorListagem)
       .subscribe((listaProduto) => {
         this.listaProduto = listaProduto
       })

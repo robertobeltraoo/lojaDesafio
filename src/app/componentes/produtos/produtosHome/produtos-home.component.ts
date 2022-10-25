@@ -1,7 +1,6 @@
-import { Categoria } from './../categoria';
 import { ProdutoService } from './../produto.service';
 import { Produto } from './../produto';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input ,OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
@@ -10,9 +9,9 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./produtos-home.component.css']
 })
 export class ProdutosHomeComponent implements OnInit {
-
+  
+  // @Input() category!: string;
   listaProduto: Produto[] = [];
-  listaProdutoCategoria: Produto[] = [];
   produto: Produto = {
     id: 0,
     nomeProduto: '',
@@ -22,13 +21,8 @@ export class ProdutosHomeComponent implements OnInit {
     altProduto: '',
     categoria: ''
   }
-  categoriaDB: Categoria = {
-    id: 0,
-    nomecategoria: ''
-  }
-
-  itensPorListagem: boolean = false
-  idCategoriaInicial = 1
+  categoriaTeste: string = 'starwars'
+  
 
   constructor(
     private router: Router,
@@ -37,29 +31,32 @@ export class ProdutosHomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-     
+  this.listarPorCategoria(this.categoriaTeste)
   }
 
   irParaProduto(idProdutos: number | any){
     this.router.navigate([`paginaProduto/${idProdutos}`])
   }
-  //alterar o nome pra listar por categoria
-  listarProdutos(){
-    nomeDaCategoriaParaListar = this.buscarNomeCategoria()
-    this.itensPorListagem = true
-    this.produtoService.listarProdutos(nomeDaC , this.itensPorListagem)
-      .subscribe((listaProdutosPorCategoria) => {
-        this.listaProduto = listaProdutosPorCategoria
-        this.listaProdutoCategoria = listaProdutosPorCategoria
+
+  listarPorCategoria(categoria: string){
+    this.produtoService.listarPorCategoria(categoria, true)
+      .subscribe((listaProdutos) => {
+        this.listaProduto = listaProdutos
       })
   }
 
-  buscarNomeCategoria(){
-    if(this.categoriaDB.nomecategoria === this.produto.nomeProduto){
-      return this.produto.nomeProduto.value
-    }
+  mudarProduto(idProdutos: number | any){
+    // this.router.navigate([`paginaProduto/${idProdutos}`])
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false;
+    this.router.onSameUrlNavigation = 'reload';
+    this.router.navigate([this.router.url]);
   }
-  // produtoCategoria(categoria: string | any){
-  //   this.listaProdutoCategoria = produtos.filter(produtos.)
-  // }
+
+  irParaPaginaDaCategoria(categoria: string | any){
+    this.router.navigate([`todosOsProdutos/${categoria}`])
+  }
 }
+
+/* fazer uma lista q vai gerar os nome das categorias na tela, e fazer buscar os produtos que tenham o mesmo valor de atributo dessa categoria 
+  posso utilizar value="nome da categoria" saber qual categoria sera exibida na lista
+*/

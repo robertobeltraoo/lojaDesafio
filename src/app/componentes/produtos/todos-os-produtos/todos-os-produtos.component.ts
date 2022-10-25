@@ -1,4 +1,4 @@
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Produto } from '../produto';
 import { ProdutoService } from '../produto.service';
@@ -14,7 +14,8 @@ export class TodosOsProdutosComponent implements OnInit {
 
   constructor(
     private router: Router,
-    private produtoService: ProdutoService
+    private produtoService: ProdutoService,
+    private activatedRoute: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
@@ -22,9 +23,14 @@ export class TodosOsProdutosComponent implements OnInit {
     //   .subscribe((listaProduto) => {
     //     this.listaProduto = listaProduto
     //   })
+    this.categoriaSelecionado()
   }
 
-  // irParaProduto(idProdutos: number | any){
-  //   this.router.navigate([`paginaProduto/${idProdutos}`])
-  // }
+  categoriaSelecionado() {    
+    const categoriaProduto = this.activatedRoute.snapshot.params['categoria'];
+    this.produtoService.listarPorCategoria(categoriaProduto, false)
+    .subscribe((produto) => {
+      this.listaProduto = produto
+    })
+  }
 }

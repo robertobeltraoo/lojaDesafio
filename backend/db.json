@@ -117,21 +117,6 @@
             "descricaoProduto": "Caixa de musica colecionavel, toca musica de abertura dos filmes.",
             "categoria": "starwars"
         }
-    ],
-       
-    "categoria": [
-        {
-            "id": 1,
-            "nomeCategoria": "starwars"
-        },
-        {
-            "id": 2,
-            "nomeCategoria": "console"
-        },
-        {
-            "id": 3,
-            "nomeCategoria": "diversos"
-        }
     ]
     
 }

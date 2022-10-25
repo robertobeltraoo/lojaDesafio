@@ -12,29 +12,30 @@ export class ProdutoService {
     private http: HttpClient
   ) { }
 
-    listarProdutos(categoria: string, itensPorListagem: boolean): Observable<Produto[]>{
+    listarProdutos(limitePorListagem: boolean): Observable<Produto[]>{
       
       let params = new HttpParams()
       
-      if(itensPorListagem === true){
+      if(limitePorListagem === true){
+        const itensPorListagem = 6;
         params = params.set("_limit", itensPorListagem)
       }
 
-      if(categoria.trim().length > 2){
-        params = params.set("q", categoria)
-      }
-
-      //depois colocaro filtro categoria para mostrar os produtos de uma unica categoria
-      
-      // if(categoria.trim() === "starwars")
-      //   params = params.set("q", categoria)
-      
-      return this.http
-        .get<Produto[]>(this.API, { params });
+      return this.http.get<Produto[]>(this.API, { params });
     }
 
     mostrarProduto(id: number): Observable<Produto>{
         const url = `${this.API}/${id}`
         return this.http.get<Produto>(url)
+    }
+
+    listarPorCategoria(categoria: string, limite: boolean): Observable<Produto[]>{
+      
+      if(limite===true){
+        const url = `${this.API}/?categoria=${categoria}&_limit=6`
+        return this.http.get<Produto[]>(url)
+      }
+      const url = `${this.API}/?categoria=${categoria}`
+        return this.http.get<Produto[]>(url)
     }
 }
