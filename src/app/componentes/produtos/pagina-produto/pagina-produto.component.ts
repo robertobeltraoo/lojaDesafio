@@ -32,7 +32,7 @@ export class PaginaProdutoComponent implements OnInit {
 
   ngOnInit(): void {
     
-    this.produtoService.listarProdutos(this.itensPorListagem)
+    this.produtoService.listarProdutos(true)
       .subscribe((listaProduto) => {
         this.listaProduto = listaProduto
       })

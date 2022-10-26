@@ -1,5 +1,5 @@
 import { PaginaProdutoComponent } from './componentes/produtos/pagina-produto/pagina-produto.component';
-import { ProdutosHomeComponent } from './componentes/produtos/produtosHome/produtos-home.component';
+import { ProdutosHomeComponent } from './componentes/produtos/produtos-home/produtos-home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TodosOsProdutosComponent } from './componentes/produtos/todos-os-produtos/todos-os-produtos.component';

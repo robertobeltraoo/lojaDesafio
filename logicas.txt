@@ -1,0 +1,37 @@
+  ---------------PRODUTOS HOME
+  [v] clicar no link "ver tudo" e ir para todos os produtos
+
+  [v] clicar no  link "ver tudo" e ir para todos os produtos da mesma categoria. cria um componente parecido com o todos-os-produtos,
+  adicionar a coluna categoria aos produtos e fazer um ng for pela categoria para listar todos os produtos dessa categoria
+  pode usar: 
+     console.log(idProdutos)
+     this.produtoService
+       .listaDeProdutos(idProdutos)
+       .subscribe(produto => this.produto = produto)
+  para fazer a rota listar os produtos da categoria
+  outra alternativa: fazer um service parecido com o pegar por id e trocar id por categoria, e fazer os metodos parecidos com
+  a pagina do produto e trocar os id por categoria
+
+  ou criar uma funcao q tera uma lista q receberar apenas os objetos com a categoria especifica
+
+  rodar titulo-categoria de acordo com o banco categoriaDB e comparar os produtos q tenham categoria compativel
+
+
+  [v] colocar na funçao click um parametro pra passar produto[n].nome para identificar o produto na função e redirecionar
+  o usuario para pagina do produto clicado (pensar como fazer a pagina-produto carregar o produto clicado, talvez um ngfor
+  percorrer o objeto produtos com um ngif para comparar o nome do objeto clicado com o nome do objeto na lista, e quando for
+  os mesmo entao sim carrega o objeto. porem isso pode nao ficar com um desempenho bom caso tenham muitos produtos, pois tera q percorrer 
+  todo o array. ou entao fazer o for e o if na pagina type e retorna o valor da funçao pro html, essa solução parece a mais viável)
+  logica: pegar o nome do produto por parametro na funcao "irParaProduto()" com o nome desse produto, passar ele para rota, 
+  no componente pagina-produto criar uma função que ira usar o nome do produto como parametro e ela retornarar para o html o conteudo 
+  desse produto
+
+  [V] ve uma maneira de colocar um objeto em um arquivo q seja compartilhado em qualquer outro arquivo para nao usar
+  objetos locais. ou criar uma database.
+
+-----------------PAGINA PRODUTOS
+  [] fazer com que produto similar mostre produtos que tem o mesmo valor na coluna "categoria" (coluna a ser adicionada)
+
+  [v] falta fazer mudar a pagina quando escolhe um produto similar(obs: funçao tem q ser feita no card-produto.ts)
+  -> feito: a função ir para produto do card produto muda a url e mudar produto da refresh na pagina para q carregue 
+  o produto da nova url 

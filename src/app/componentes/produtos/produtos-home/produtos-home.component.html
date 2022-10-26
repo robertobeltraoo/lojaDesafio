@@ -1,0 +1,24 @@
+<header class="container-banner">
+  <div class="texto-banner">
+    <h2 class="titulo-banner">Outubro das Crianças</h2>
+    <p class="conteudo-banner">Produtos selecionasdos com 33% de desconto</p>
+    <button class="botao-banner" (click)="irParaPaginaDaCategoria('consoles')">Ver Consoles</button>
+  </div>
+</header>
+
+<section class="container-produtos">
+  <div class="categorias" *ngFor="let categoria of categorias">
+    <div class="cabecalho-categoria">
+      <h3 class="titulo-categoria">{{ categoria.slug }}</h3>
+      <div class="ver-tudo" (click)="irParaPaginaDaCategoria(categoria.nome)">
+        <a class="link-ver-tudo">Ver tudo</a>
+        <img class="seta-ver-tudo" src="./../../../../assets/seta.png" alt="Seta azul">
+      </div>
+    </div>
+    <ul class="lista-produtos">
+      <li *ngFor="let produtos of categoria.produtos">
+        <app-card-produto [produto]="produtos" (click)="mudarProduto(produto.id)"></app-card-produto>
+      </li>
+    </ul>
+  </div>
+</section>
