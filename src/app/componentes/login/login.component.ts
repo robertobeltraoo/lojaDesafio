@@ -31,7 +31,8 @@ export class LoginComponent implements OnInit {
 
 
   validacaoLogin (){
-    const usuarioSelecionado = this.loginService.validLogin(this.usuario.nome, this.usuario.senha)
+    const usuarioSelecionado = this.loginService
+      .validLogin(this.usuario.nome, this.usuario.senha)
       .subscribe(() => {console.log('Usuario conectado');
     }, 
     (error)=> {
