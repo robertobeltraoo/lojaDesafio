@@ -1,22 +1,28 @@
  <section class="container-login">
   <form 
-    class="login"
-    >
-    <!-- [formGroup]="login" -->
+  [formGroup]="loginForm"
+  class="login"
+  (submit)="validacaoLogin()"
+  >
+
     <label class="titulo-login" form="login">Iniciar Sessão</label>
     <input
     type="email" 
     id="email" 
     class="form-control usuario-login"  
-    formControlName="email"
-    placeholder="Digite seu email"
+    formControlName="nome"
+    placeholder="Digite seu nome de usuário"
+    [(ngModel)]="usuario.nome"
     >
+  
     <input
-    
     type="password"
     class="senha-login"
+    formControlName="senha"
     placeholder="Digite sua senha"
+    [value]="usuario.senha"
     >
-    <button class="botao-entrar-login" (click)="validacaoLogin">Entrar</button>
+   
+    <button class="botao-entrar-login" (click)="validacaoLogin()">Entrar</button>
   </form>
 </section>

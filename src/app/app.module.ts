@@ -11,6 +11,7 @@ import { LoginComponent } from './componentes/login/login.component';
 import { TodosOsProdutosComponent } from './componentes/produtos/todos-os-produtos/todos-os-produtos.component';
 import { PaginaProdutoComponent } from './componentes/produtos/pagina-produto/pagina-produto.component';
 import { CardProdutoComponent } from './componentes/produtos/card-produto/card-produto.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,8 @@ import { CardProdutoComponent } from './componentes/produtos/card-produto/card-p
     BrowserModule,
     AppRoutingModule,
     HttpClientModule, 
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

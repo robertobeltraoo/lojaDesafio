@@ -1,5 +1,7 @@
+import { LoginService } from './login.service';
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
+import { Usuario } from './usuario';
 
 @Component({
   selector: 'app-login',
@@ -7,26 +9,35 @@ import { FormBuilder, FormGroup } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  loginForm!: FormGroup;
 
-  // form;
-
-  // constructor(private formBuilder: FormBuilder) { 
-  //   this.criarForm()
-  // }
-
-  // criarForm(){
-  //   this.form = this.formBuilder.group({
-  //     email: [''],
-  //     password: ['']
-  //   })
-  // }
-
-  ngOnInit(): void {
+  usuario: Usuario = {
+    id: 0,
+    nome: '',
+    email: '',
+    senha: ''
   }
 
-  validacaoLogin ( userName: string, userPassword: string){
+  constructor(
+    private loginService: LoginService,
+    private formBuilder: FormBuilder
+  ) { }
+  ngOnInit(): void {
+    this.loginForm = this.formBuilder.group({
+      nome: [''],
+      senha: ['']
+    })
+  }
+
+
+  validacaoLogin (){
+    const usuarioSelecionado = this.loginService.validLogin(this.usuario.nome, this.usuario.senha)
+      .subscribe(() => {console.log('Usuario conectado');
+    }, 
+    (error)=> {
+      console.log('Usuario invalido');
+    });
     
-    //if(userName === this.user[0]){}
   }
 
 }

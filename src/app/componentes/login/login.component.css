@@ -44,3 +44,7 @@
   line-height: 20px;
   border-radius: 4px;
 }
+
+.botao-entrar-login:hover{
+  cursor: pointer;
+}

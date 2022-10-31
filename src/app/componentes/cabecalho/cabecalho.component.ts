@@ -21,4 +21,8 @@ export class CabecalhoComponent implements OnInit {
     this.router.navigate(['/produtosHome']);
   }
 
+  irParaTelaLogin(){ 
+    this.router.navigate(['/login']);
+  }
+
 }
